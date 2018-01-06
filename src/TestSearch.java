@@ -1,10 +1,17 @@
 import edu.princeton.cs.algs4.Bag;
 
+/***
+ * javac  -Xlint:deprecation TestSearch.java
+ * java TestSearch dfs.txt 12
+ * 
+ * **/
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 class Graph{
 	private final int V;
 	private int E;
 	private Bag<Integer>[] adj;
-	public Graph(int V){
+	public Graph(int V){// Graph class
 		this.V = V; this.E = 0;
 		adj = (Bag<Integer>[]) new Bag[V];
 		for (int v = 0; v < V; v++)
@@ -47,7 +54,8 @@ class Search{
 		 marked[v] = true;
 		 count++;
 		 for (int w : G.adj(v))
-			 if (!marked[w]) dfs(G, w);
+			 if (!marked[w])
+				 dfs(G, w);
 	 }
 	boolean marked(int v) {
 		return marked[v];
